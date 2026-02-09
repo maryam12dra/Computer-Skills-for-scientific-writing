@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>report.docx. LAB06.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p>Отчёт по лабораторной работе №6</p>
+<p>Working with Bibliography</p>
+<p>ДРАММЕХ МАРИАМА Л</p>
+<p>Содержание</p>
+<p>Список иллюстраций</p>
+<p>Список таблиц</p>
+<h1 id="1-%D1%86%D0%B5%D0%BB%D1%8C-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B">1 Цель работы</h1>
+<p>Целью данной лабораторной работы является освоение методов работы с библиографией в LaTeX, включая использование систем BibTeX и biblatex для управления цитированием и списками литературы.</p>
+<p>The purpose of this lab work is to learn how to work with bibliography in LaTeX, including using BibTeX and biblatex systems for managing citations and reference lists.</p>
+<h1 id="2-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5">2 Задание</h1>
+<ol>
+<li>Освоить workflow с natbib и BibTeX для работы с библиографией</li>
+<li>Освоить workflow с biblatex и Biber и их особенности</li>
+<li>Сравнить два подхода к работе с библиографией и их применение</li>
+<li>Выполнить практические упражнения по созданию и управлению библиографическими ссылками</li>
+</ol>
+<h1 id="3-%D1%82%D0%B5%D0%BE%D1%80%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">3 Теоретическое введение</h1>
+<h2 id="31-6-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%B5%D0%B9--working-with-bibliography">3.1 6 Работа с библиографией / Working with Bibliography</h2>
+<p>Для библиографических ссылок обычно используется информация из внешних файлов - библиографических баз данных. For bibliographic citations, information is typically retrieved from external files - bibliographic databases.</p>
+<p>\documentclass{article}<br>
+\usepackage[T1]{fontenc}<br>
+\usepackage{natbib}</p>
+<p>\begin{document}<br>
+Ссылка на книгу: \citet{Graham1995}.<br>
+Ссылка на статью: \citep{Thomas2008}.</p>
+<p>\bibliographystyle{plainnat}<br>
+\bibliography{learnlatex}<br>
+\end{document}</p>
+<h2 id="32-61-%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5-%D0%B1%D0%B0%D0%B7%D1%8B-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85--reference-databases">3.2 6.1 Библиографические базы данных / Reference Databases</h2>
+<p>Базы данных BibTeX содержат записи с различными полями. BibTeX databases contain entries with various fields.</p>
+<p>\documentclass{article}</p>
+<p>\usepackage[T1]{fontenc}</p>
+<p>\begin{document}</p>
+<p>@article{Thomas2008,</p>
+<p>author = {Thomas, Christine M. and Liu, Tianbiao and Hall,</p>
+<p>Michael B.</p>
+<p>and Darensbourg, Marcetta Y.},</p>
+<p>title = {Series of Mixed Valent {Fe(II)Fe(I)} Complexes</p>
+<p>That Model the</p>
+<p>{H(OX)} State of [{FeFe}]Hydrogenase: Redox</p>
+<p>Properties,</p>
+<p>Density-Functional Theory Investigation, and</p>
+<p>Reactivity with</p>
+<p>Extrinsic {CO}},</p>
+<p>journal = {Inorg. Chem.},</p>
+<p>year = {2008},</p>
+<p>volume = {47},</p>
+<p>number = {15},</p>
+<p>pages = {7009-7024},</p>
+<p>doi = {10.1021/ic800654a},</p>
+<p>}</p>
+<p>@book{Graham1995,</p>
+<p>author = {Ronald L. Graham and Donald E. Knuth and Oren</p>
+<p>Patashnik},</p>
+<p>title = {Concrete Mathematics},</p>
+<p>publisher = {Addison-Wesley},</p>
+<p>year = {1995},</p>
+<p>}</p>
+<p>\end{document}</p>
+<p><img src="./report.docx. LAB06_images/image-001.png" alt=""></p>
+<h2 id="33-62-%D0%BF%D0%B5%D1%80%D0%B5%D0%BD%D0%BE%D1%81-%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8-%D0%B8%D0%B7-%D0%B1%D0%B0%D0%B7%D1%8B-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85--transferring-information-from-database">3.3 6.2 Перенос информации из базы данных / Transferring Information from Database</h2>
+<p>Для работы с библиографией требуется несколько шагов компиляции: Working with bibliography requires multiple compilation steps:</p>
+<ul>
+<li><strong>natbib + BibTeX</strong>: LaTeX → BibTeX → LaTeX → LaTeX</li>
+<li><strong>biblatex + Biber</strong>: LaTeX → Biber → LaTeX</li>
+</ul>
+<h2 id="34-63-workflow-bibtex-%D1%81-natbib--the-bibtex-workflow-with-natbib">3.4 6.3 Workflow BibTeX с natbib / The BibTeX Workflow with natbib</h2>
+<p>Пакет natbib предоставляет расширенные возможности цитирования. The natbib package provides enhanced citation capabilities.</p>
+<p>\documentclass{article}</p>
+<p>\usepackage[T1]{fontenc}</p>
+<p>\usepackage{natbib}</p>
+<p>\begin{document}</p>
+<p>The mathematics showcase is from \citet{Graham1995}, whereas</p>
+<p>there is some chemistry in \citet{Thomas2008}.</p>
+<p>Some parenthetical citations: \citep{Graham1995}</p>
+<p>and then \citep[p.~56]{Thomas2008}.</p>
+<p>\citep[See][pp.~45--48]{Graham1995}</p>
+<p>Together \citep{Graham1995,Thomas2008}</p>
+<p>\bibliographystyle{plainnat}</p>
+<p>\bibliography{learnlatex}</p>
+<p>\end{document}</p>
+<p><img src="./report.docx. LAB06_images/image-002.png" alt=""></p>
+<h2 id="35-64-workflow-biblatex--the-biblatex-workflow">3.5 6.4 Workflow biblatex / The biblatex Workflow</h2>
+<p>Пакет biblatex работает несколько иначе, с загрузкой ресурсов в преамбуле. The biblatex package works differently, loading resources in the preamble.</p>
+<p>\documentclass{article}</p>
+<p>\usepackage[T1]{fontenc}</p>
+<p>\usepackage[style=authoryear]{biblatex}</p>
+<p>\addbibresource{learnlatex.bib} % file of reference info</p>
+<p>\begin{document}</p>
+<p>The mathematics showcase is from \autocite{Graham1995}.</p>
+<p>Some more complex citations: \parencite{Graham1995} or</p>
+<p>\textcite{Thomas2008} or possibly \citetitle{Graham1995}.</p>
+<p>\autocite[56]{Thomas2008}</p>
+<p>\autocite[See][45-48]{Graham1995}</p>
+<p>Together \autocite{Thomas2008,Graham1995}</p>
+<p>\printbibliography</p>
+<p>\end{document}</p>
+<p><img src="./report.docx. LAB06_images/image-003.png" alt=""></p>
+<h2 id="36-65-%D0%B2%D1%8B%D0%B1%D0%BE%D1%80-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83-bibtex-%D0%B8-biblatex--choosing-between-bibtex-and-biblatex">3.6 6.5 Выбор между BibTeX и BibLaTeX / Choosing Between BibTeX and BibLaTeX</h2>
+<p><strong>BibTeX workflow:</strong> - Более установленный и поддерживаемый издательствами - Использует .bst файлы для стилей - Ограниченная поддержка Unicode</p>
+<p><strong>biblatex workflow:</strong> - Лучшая кастомизация через LaTeX команды - Полная поддержка Unicode сортировки - Более сложные стили цитирования</p>
+<h2 id="37-66-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%BD%D0%B5-%D0%B0%D0%BD%D0%B3%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%BE%D0%B9-%D1%81%D0%BE%D1%80%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%BE%D0%B9--dealing-with-non-english-sorting">3.7 6.6 Работа с не-английской сортировкой / Dealing with Non-English Sorting</h2>
+<p>Biber обеспечивает правильную сортировку для не-английских символов. Biber provides proper sorting for non-English characters.</p>
+<p>@article{Müller2023,<br>
+author = {Müller, Hans and École, Pierre and Смирнов, Иван},<br>
+title = {Международное исследование},<br>
+journal = {Журнал},<br>
+year = {2023}<br>
+}</p>
+<h2 id="38-67-%D0%B3%D0%B8%D0%BF%D0%B5%D1%80%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B8--hyperlinks">3.8 6.7 Гиперссылки / Hyperlinks</h2>
+<p>Пакет hyperref автоматически создает ссылки в библиографии. The hyperref package automatically creates links in bibliography.</p>
+<p>\documentclass{article}<br>
+\usepackage[T1]{fontenc}<br>
+\usepackage[hidelinks]{hyperref}<br>
+\usepackage[style=authoryear]{biblatex}<br>
+\addbibresource{learnlatex.bib}</p>
+<p>\begin{document}<br>
+Ссылка \autocite{Graham1995} будет гиперссылкой.</p>
+<p>\printbibliography<br>
+\end{document}</p>
+<h2 id="39-68-%D1%80%D0%B0%D0%B7%D0%BB%D0%B8%D1%87%D0%B8%D1%8F-%D0%B2-%D0%BB%D1%83%D1%87%D1%88%D0%B8%D1%85-%D0%BF%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%BA%D0%B0%D1%85-%D0%B4%D0%BB%D1%8F-bibtex--differences-in-best-practice-for-bibtex-input">3.9 6.8 Различия в лучших практиках для BibTeX / Differences in Best Practice for BibTeX Input</h2>
+<p>Различные стили библиографии поддерживают разные поля. Different bibliography styles support different fields.</p>
+<p>% Для старых стилей<br>
+@misc{Website2023,<br>
+author = {Author},<br>
+title = {Website Title},<br>
+howpublished = {\url{https://example.com}}<br>
+}</p>
+<p>% Для новых стилей<br>
+@misc{Website2023,<br>
+author = {Author},<br>
+title = {Website Title},<br>
+url = {https://example.com}<br>
+}</p>
+<h1 id="4-%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%BE%D0%B9-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B">4 Выполнение лабораторной работы</h1>
+<h2 id="41-69-%D1%83%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F--exercises">4.1 6.9 Упражнения / Exercises</h2>
+<h3 id="411-%D1%83%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-1-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B-%D1%81-natbib-%D0%B8-biblatex">4.1.1 Упражнение 1: Использовать примеры с natbib и biblatex</h3>
+<p><strong>natbib workflow:</strong></p>
+<p>\documentclass{article}</p>
+<p>\usepackage[utf8]{inputenc}</p>
+<p>\usepackage[T1]{fontenc}</p>
+<p>\usepackage{natbib}</p>
+<p>\begin{document}</p>
+<p>Ссылка на книгу: \citet{Graham1995}. Ссылка на статью: \citep{Thomas2008}.</p>
+<p>\bibliographystyle{plainnat}</p>
+<p>\bibliography{learnlatex}</p>
+<p>\end{document}</p>
+<p><em>Компиляция: LaTeX → BibTeX → LaTeX → LaTeX</em></p>
+<p><img src="./report.docx. LAB06_images/image-004.png" alt=""></p>
+<p><strong>biblatex workflow:</strong></p>
+<p>\documentclass{article}</p>
+<p>\usepackage[utf8]{inputenc}</p>
+<p>\usepackage[T1]{fontenc}</p>
+<p>\usepackage[style=authoryear]{biblatex}</p>
+<p>\addbibresource{learnlatex.bib}</p>
+<p>\begin{document}</p>
+<p>Авторская ссылка: \textcite{Graham1995}. Скобочная ссылка: \parencite{Thomas2008}.</p>
+<p>\printbibliography</p>
+<p>\end{document}</p>
+<p><em>Компиляция: LaTeX → Biber → LaTeX</em></p>
+<p><img src="./report.docx. LAB06_images/image-005.png" alt=""></p>
+<h3 id="412-%D1%83%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-2-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D1%82%D1%8C-%D0%BD%D0%BE%D0%B2%D1%8B%D0%B5-%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B8-%D0%B2-%D0%B1%D0%B0%D0%B7%D0%B5-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85-%D0%B8-%D0%BD%D0%BE%D0%B2%D1%8B%D0%B5-%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B8">4.1.2 Упражнение 2: Создать новые записи в базе данных и новые ссылки</h3>
+<p><strong>Новая запись в learnlatex.bib:</strong></p>
+<p>@article{Einstein1905,<br>
+author = {Albert Einstein},<br>
+title = {On the Electrodynamics of Moving Bodies},<br>
+journal = {Annalen der Physik},<br>
+year = {1905},<br>
+volume = {322},<br>
+number = {10},<br>
+pages = {891--921},<br>
+doi = {10.1002/andp.19053221004}<br>
+}</p>
+<p><strong>Документ с новой ссылкой:</strong></p>
+<p>\documentclass{article}</p>
+<p>\usepackage[utf8]{inputenc}</p>
+<p>\usepackage[T1]{fontenc}</p>
+<p>\usepackage[style=authoryear]{biblatex}</p>
+<p>\addbibresource{learnlatex.bib}</p>
+<p>\begin{document}</p>
+<p>Новая ссылка: \cite{Einstein1905}. Комбинированные ссылки: \cite{Graham1995,Einstein1905,Thomas2008}.</p>
+<p>\printbibliography</p>
+<p>\end{document}</p>
+<p><img src="./report.docx. LAB06_images/image-006.png" alt=""></p>
+<h3 id="413-%D1%83%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-3-%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C-%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D1%83-%D0%BD%D0%B0-%D0%BE%D1%82%D1%81%D1%83%D1%82%D1%81%D1%82%D0%B2%D1%83%D1%8E%D1%89%D1%83%D1%8E-%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D1%8C-%D0%B2-%D0%B1%D0%B0%D0%B7%D0%B5-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D1%85">4.1.3 Упражнение 3: Добавить ссылку на отсутствующую запись в базе данных</h3>
+<p>\documentclass{article}</p>
+<p>\usepackage[T1]{fontenc}</p>
+<p>\usepackage[style=authoryear]{biblatex}</p>
+<p>\addbibresource{learnlatex.bib}</p>
+<p>\begin{document}</p>
+<p>Ссылка на существующую запись: \cite{Graham1995}.</p>
+<p>Ссылка на отсутствующую запись: \cite{MissingEntry2024}.</p>
+<p>Комбинированные ссылки: \cite{Graham1995,MissingEntry2024,Thomas2008}.</p>
+<p>\printbibliography</p>
+<p>\end{document}</p>
+<p><img src="./report.docx. LAB06_images/image-007.png" alt=""></p>
+<h3 id="414-%D1%83%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-4-%D1%8D%D0%BA%D1%81%D0%BF%D0%B5%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C-%D1%81-%D1%87%D0%B8%D1%81%D0%BB%D0%BE%D0%B2%D1%8B%D0%BC%D0%B8-%D1%81%D1%82%D0%B8%D0%BB%D1%8F%D0%BC%D0%B8-%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%B8">4.1.4 Упражнение 4: Экспериментировать с числовыми стилями библиографии</h3>
+<p><strong>natbib с числовым стилем:</strong></p>
+<p>\documentclass{article}</p>
+<p>\usepackage[utf8]{inputenc}</p>
+<p>\usepackage[T1]{fontenc}</p>
+<p>\usepackage[english,russian]{babel}</p>
+<p>\usepackage[numbers]{natbib}</p>
+<p>\begin{document}</p>
+<p>\begin{thebibliography}{99}</p>
+<p>\bibitem{Graham1995} Graham, R. L. (1995). Some results in combinatorics.</p>
+<p>\bibitem{Thomas2008} Thomas, R. (2008). Recent developments in graph theory.</p>
+<p>\end{thebibliography}</p>
+<p>Числовые ссылки: \cite{Graham1995} и \cite{Thomas2008}.</p>
+<p>Множественные ссылки: \cite{Graham1995,Thomas2008}.</p>
+<p>\end{document}</p>
+<p><img src="./report.docx. LAB06_images/image-008.png" alt=""></p>
+<p><strong>biblatex с числовым стилем:</strong></p>
+<p>\documentclass{article}</p>
+<p>\usepackage[T1]{fontenc}</p>
+<p>\usepackage[dutch]{babel}</p>
+<p>\begin{document}</p>
+<p>Numerical values link: \cite{Graham1995} \cite{Thomas2008}.</p>
+<p>Plenty link: \cite{Graham1995, Thomas2008}.</p>
+<p>\bibliographystyle{plain}  % or plainnat, unsrt, etc.</p>
+<p>\bibliography{references}   % references.bib file without extension</p>
+<p>\end{document}</p>
+<p><img src="./report.docx. LAB06_images/image-009.png" alt=""></p>
+<h1 id="5-%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D1%8B">5 Выводы</h1>
+<p>В ходе лабораторной работы №6 я освоил методы работы с библиографией в LaTeX. Изучил два основных подхода: традиционный workflow с natbib и BibTeX, а также современный подход с biblatex и Biber. Научился создавать библиографические базы данных, управлять стилями цитирования, работать с не-английской сортировкой и создавать гиперссылки в библиографии.</p>
+<p>In this lab work #6, I mastered bibliography management methods in LaTeX. I studied two main approaches: traditional workflow with natbib and BibTeX, as well as modern approach with biblatex and Biber. I learned to create bibliographic databases, manage citation styles, work with non-English sorting, and create hyperlinks in bibliography.</p>
+<h1 id="%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D1%8B">Список литературы</h1>
+<ol>
+<li>Practical scientific writing - Tables chapter</li>
+<li>LaTeX/Tables - Wikibooks. https://en.wikibooks.org/wiki/LaTeX/Tables</li>
+<li>array package documentation</li>
+<li>booktabs package documentation</li>
+</ol>
+
+</body>
+</html>
