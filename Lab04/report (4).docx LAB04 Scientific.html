@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>report (4).docx LAB04 Scientific.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p>Отчёт по лабораторной работе №4</p>
+<p>Including Graphics</p>
+<p>Драммех Мариама Л</p>
+<p>Содержание</p>
+<p>Список иллюстраций</p>
+<p>Список таблиц</p>
+<h1 id="1-%D1%86%D0%B5%D0%BB%D1%8C-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B">1 Цель работы</h1>
+<p>Целью данной лабораторной работы является ознакомление с основами включения графики в документы LaTeX.</p>
+<p>The purpose of this lab work is to learn how to include and manipulate graphics in LaTeX documents using the graphicx package and related tools.</p>
+<h1 id="2-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5">2 Задание</h1>
+<ol>
+<li>Study basic image inclusion with graphicx package</li>
+<li>Learn to modify graphic appearance (size, rotation, scaling)</li>
+<li>Understand float environments for image placement</li>
+<li>Practice file naming and organization best practices</li>
+<li>Learn cross-referencing for figures</li>
+<li>Explore different float types and positioning options</li>
+<li>Complete the exercises with practical examples</li>
+</ol>
+<h1 id="3-%D1%82%D0%B5%D0%BE%D1%80%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">3 Теоретическое введение</h1>
+<h2 id="31-4-%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B8--including-graphics">3.1 4 Включение графики / Including Graphics</h2>
+<p>Для включения внешних изображений в LaTeX используется пакет graphicx, который предоставляет команду \includegraphics. To include external images in LaTeX, use the graphicx package which provides the \includegraphics command.<br>
+<img src="./report (4).docx LAB04 Scientific_images/image-001.png" alt=""></p>
+<p>\documentclass{article}<br>
+\usepackage[T1]{fontenc}<br>
+\usepackage{graphicx}<br>
+\begin{document}<br>
+This picture<br>
+\begin{center}<br>
+\includegraphics[height=2cm]{example-image}<br>
+\end{center}<br>
+is an imported PDF.<br>
+\end{document}</p>
+<h2 id="32-41-%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B2%D0%BD%D0%B5%D1%88%D0%BD%D0%B5%D0%B3%D0%BE-%D0%B2%D0%B8%D0%B4%D0%B0-%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B8--altering-graphic-appearance">3.2 4.1 Изменение внешнего вида графики / Altering Graphic Appearance</h2>
+<p>Команда \includegraphics имеет множество опций для управления размером и формой изображений. The \includegraphics command has many options to control image size and appearance.</p>
+<p>\documentclass{article}</p>
+<p>\usepackage[T1]{fontenc}</p>
+<p>\usepackage{graphicx}</p>
+<p>\begin{document}</p>
+<p>\begin{center}</p>
+<p>\includegraphics[height = 0.5\textheight]{example-image}</p>
+<p>\end{center}</p>
+<p>Some text</p>
+<p>\begin{center}</p>
+<p>\includegraphics[width = 0.5\textwidth]{example-image}</p>
+<p>\end{center}</p>
+<p>\end{document}</p>
+<p><img src="./report (4).docx LAB04 Scientific_images/image-002.png" alt=""></p>
+<p>\documentclass{article}</p>
+<p>\usepackage[T1]{fontenc}</p>
+<p>\usepackage{graphicx}</p>
+<p>\begin{document}</p>
+<p>\begin{center}</p>
+<p>\includegraphics[clip, trim = 0 0 50 50]{example-image}</p>
+<p>\end{center}</p>
+<p>\end{document}</p>
+<p><img src="./report (4).docx LAB04 Scientific_images/image-003.png" alt=""></p>
+<h2 id="33-42-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BB%D0%B0%D0%B2%D0%B0%D1%8E%D1%89%D0%B8%D1%85-%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9--making-images-float">3.3 4.2 Создание плавающих изображений / Making Images Float</h2>
+<p>Изображения обычно включаются как плавающие объекты (floats) чтобы избежать больших пробелов на странице. Images are typically included as floats to avoid large gaps on the page.</p>
+<p>\documentclass{article}<br>
+\usepackage[T1]{fontenc}<br>
+\usepackage{graphicx}<br>
+\usepackage{lipsum} % produce dummy text as filler<br>
+\begin{document}<br>
+\lipsum[1-4] % Just a few filler paragraphs<br>
+Test location.<br>
+\begin{figure}[ht]<br>
+\centering<br>
+\includegraphics[width=0.5\textwidth]{example-image-a.png}<br>
+\caption{An example image}<br>
+\end{figure}<br>
+\lipsum[6-10] % Just a few filler paragraphs<br>
+\end{document}</p>
+<p><img src="./report (4).docx LAB04 Scientific_images/image-004.png" alt=""></p>
+<h2 id="34-43-%D0%B8%D0%BC%D0%B5%D0%BD%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2--naming-graphics-files">3.4 4.3 Именование графических файлов / Naming Graphics Files</h2>
+<p>Рекомендуется использовать простые имена файлов без пробелов и специальных символов. It’s recommended to use simple file names without spaces or special characters.</p>
+<p>\includegraphics[width=30pt]{pics/myimage.png}</p>
+<h2 id="35-44-%D1%85%D1%80%D0%B0%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B8-%D0%B2-%D0%BF%D0%BE%D0%B4%D0%B4%D0%B8%D1%80%D0%B5%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D0%B8--storing-graphics-in-subdirectory">3.5 4.4 Хранение графики в поддиректории / Storing Graphics in Subdirectory</h2>
+<p>Для организации файлов изображения можно хранить в поддиректориях. To organize files, images can be stored in subdirectories.</p>
+<p>\graphicspath{{figs/}{pics/}}</p>
+<h2 id="36-45-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B8--producing-graphics">3.6 4.5 Создание графики / Producing Graphics</h2>
+<p>LaTeX поддерживает различные форматы изображений. Предпочтительно использовать PDF для векторной графики. LaTeX supports various image formats. PDF is preferred for vector graphics.</p>
+<p>% создания графики с TikZ<br>
+\documentclass{article}<br>
+\usepackage{tikz}<br>
+\begin{document}<br>
+\begin{tikzpicture}<br>
+\draw (0,0) circle (1cm);<br>
+\draw (-1,0) -- (1,0);<br>
+\end{tikzpicture}<br>
+\end{document}</p>
+<h2 id="37-46-%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BB%D0%B0%D0%B2%D0%B0%D1%8E%D1%89%D0%B8%D1%85-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2--placing-floats">3.7 4.6 Размещение плавающих объектов / Placing Floats</h2>
+<p>Пакет float предоставляет опцию H для точного размещения плавающих объектов. The float package provides the H option for precise float placement.</p>
+<p>\documentclass{article}</p>
+<p>\usepackage[T1]{fontenc}</p>
+<p>\usepackage{graphicx}</p>
+<p>\usepackage{lipsum} % dummy text for filler</p>
+<p>\usepackage{float}</p>
+<p>\begin{document}</p>
+<p>\lipsum[1-7]</p>
+<p>\begin{figure}[H]</p>
+<p>\centering</p>
+<p>\includegraphics[width=0.5\textwidth]{example-image}</p>
+<p>\caption{An example image}</p>
+<p>\end{figure}</p>
+<p>\lipsum[8-15]</p>
+<p>\end{document}</p>
+<p><img src="./report (4).docx LAB04 Scientific_images/image-005.png" alt=""></p>
+<h2 id="38-47-%D0%B4%D1%80%D1%83%D0%B3%D0%B8%D0%B5-%D1%82%D0%B8%D0%BF%D1%8B-%D0%BF%D0%BB%D0%B0%D0%B2%D0%B0%D1%8E%D1%89%D0%B8%D1%85-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2--other-types-of-float">3.8 4.7 Другие типы плавающих объектов / Other Types of Float</h2>
+<p>Пакет trivfloat позволяет создавать новые типы плавающих сред. The trivfloat package allows creating new types of float environments.</p>
+<p>\documentclass{article}<br>
+\usepackage[T1]{fontenc}<br>
+\usepackage{graphicx}<br>
+\usepackage{lipsum} % dummy text for filler<br>
+\usepackage{trivfloat}<br>
+\trivfloat{image}<br>
+\begin{document}<br>
+\begin{image}<br>
+\centering<br>
+\includegraphics[width=0.5\textwidth]{example-image}<br>
+\caption{An example image}<br>
+\end{image}<br>
+\end{document}</p>
+<p><img src="./report (4).docx LAB04 Scientific_images/image-006.png" alt=""></p>
+<h2 id=""></h2>
+<p>3.9 4.8 Перекрёстные ссылки / Cross-referencing</p>
+<p>Механизм \label и \ref позволяет создавать ссылки на пронумерованные элементы. The \label and \ref mechanism allows creating references to numbered elements.</p>
+<p>\documentclass{article}<br>
+\usepackage[T1]{fontenc}<br>
+\begin{document}<br>
+Hey world!<br>
+This is a first document.<br>
+\section{Title of the first section}<br>
+Text of material for the first section.<br>
+\subsection{Subsection of the first section}<br>
+\label{subsec:labelone}<br>
+Text of material for the first subsection.<br>
+\begin{equation}<br>
+e^{i\pi}+1 = 0<br>
+\label{eq:labeltwo}<br>
+\end{equation}<br>
+In subsection~\ref{subsec:labelone} is<br>
+equation~\ref{eq:labeltwo}.<br>
+\end{document}</p>
+<p><img src="./report (4).docx LAB04 Scientific_images/image-007.png" alt=""></p>
+<p><img src="./report (4).docx LAB04 Scientific_images/image-008.png" alt=""></p>
+<p>\documentclass{article}</p>
+<p>\usepackage[T1]{fontenc}</p>
+<p>\usepackage[hidelinks]{hyperref}</p>
+<p>\begin{document}</p>
+<p>\section{Introduction}</p>
+<p>Some exciting text with a reference~\ref{sec:next}.</p>
+<p>\section{Next thing}</p>
+<p>\label{sec:next}</p>
+<p>More text here.</p>
+<p>\end{document}</p>
+<p><img src="./report (4).docx LAB04 Scientific_images/image-009.png" alt=""></p>
+<h1 id="4-%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%BE%D0%B9-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B">4 Выполнение лабораторной работы</h1>
+<h2 id="41-410-%D1%83%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F--exercises">4.1 4.10 Упражнения / Exercises</h2>
+<h3 id="411-%D1%83%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-1-%D0%B2%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%81%D0%BE%D0%B1%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B3%D0%BE-%D0%B8%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F--including-your-own-image">4.1.1 Упражнение 1: Включение собственного изображения / Including Your Own Image</h3>
+<p>\documentclass{article}</p>
+<p>\usepackage{graphicx}</p>
+<p>\begin{document}</p>
+<p>\begin{figure}[ht]</p>
+<p>\centering</p>
+<p>% \includegraphics[width=0.7\textwidth]{my-photo.jpg}</p>
+<p>\caption{My Photo from LAB04 Folder}</p>
+<p>\label{fig:photo1}</p>
+<p>\end{figure}</p>
+<p>\end{document}</p>
+<p><img src="./report (4).docx LAB04 Scientific_images/image-010.png" alt=""></p>
+<h3 id="412-%D1%83%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-2-%D0%B8%D1%81%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BE%D0%BF%D1%86%D0%B8%D0%B9-%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%80%D0%B0-%D0%B8-%D0%BF%D0%BE%D0%B2%D0%BE%D1%80%D0%BE%D1%82%D0%B0--exploring-size-and-rotation-options">4.1.2 Упражнение 2: Исследование опций размера и поворота / Exploring Size and Rotation Options</h3>
+<p>\documentclass{article}</p>
+<p>\usepackage{graphicx}</p>
+<p>\begin{document}</p>
+<p>\includegraphics[height=3cm]{my-photo.jpg}</p>
+<p>\includegraphics[width=0.3\textwidth]{my-photo.jpg}</p>
+<p>\includegraphics[scale=0.5]{my-photo.jpg}</p>
+<p>\includegraphics[angle=45, width=0.2\textwidth]{my-photo.jpg}</p>
+<p>\end{document}</p>
+<p><img src="./report (4).docx LAB04 Scientific_images/image-011.png" alt=""></p>
+<h3 id="413-%D1%83%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-3-%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-textwidth-%D0%B8-linewidth--comparing-textwidth-and-linewidth">4.1.3 Упражнение 3: Сравнение textwidth и linewidth / Comparing textwidth and linewidth</h3>
+<p>\documentclass[twocolumn]{article}</p>
+<p>\usepackage[utf8]{inputenc}</p>
+<p>\usepackage[T2A]{fontenc}</p>
+<p>\usepackage{graphicx}</p>
+<p>\usepackage{lipsum}</p>
+<p>\begin{document}</p>
+<p>\lipsum[1]</p>
+<p>\begin{figure}[ht]</p>
+<p>\centering</p>
+<p>\includegraphics[width=0.8\linewidth]{my-photo.jpg}</p>
+<p>\caption{С использованием \textbackslash linewidth}</p>
+<p>\end{figure}</p>
+<p>\begin{figure}[ht]</p>
+<p>\centering</p>
+<p>\includegraphics[width=0.5\textwidth]{my-photo.jpg}</p>
+<p>\caption{С использованием \textbackslash textwidth (50\%)}</p>
+<p>\end{figure}</p>
+<p>\lipsum[2-5]</p>
+<p>\end{document}</p>
+<p><img src="./report (4).docx LAB04 Scientific_images/image-012.png" alt=""></p>
+<h3 id="414-%D1%83%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-4-%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BB%D0%B0%D0%B2%D0%B0%D1%8E%D1%89%D0%B8%D1%85-%D0%BE%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BE%D0%B2-%D1%81-%D1%80%D0%B0%D0%B7%D0%BD%D1%8B%D0%BC%D0%B8-%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%D0%B0%D0%BC%D0%B8--float-placement-with-different-specifiers">4.1.4 Упражнение 4: Размещение плавающих объектов с разными спецификаторами / Float Placement with Different Specifiers</h3>
+<p>\documentclass{article}</p>
+<p>\usepackage[utf8]{inputenc}</p>
+<p>\usepackage[T2A]{fontenc}</p>
+<p>\usepackage{graphicx}</p>
+<p>\usepackage{lipsum}</p>
+<p>\begin{document}</p>
+<p>\lipsum[1-2]</p>
+<p>\begin{figure}[h]</p>
+<p>\centering</p>
+<p>\includegraphics[width=0.4\textwidth]{my-photo.jpg}</p>
+<p>\caption{Опция h (здесь)}</p>
+<p>\end{figure}</p>
+<p>\lipsum[3]</p>
+<p>\begin{figure}[t]</p>
+<p>\centering</p>
+<p>\includegraphics[width=0.4\textwidth]{example-image-b}</p>
+<p>\caption{Опция t (верх)}</p>
+<p>\end{figure}</p>
+<p>\begin{figure}[b]</p>
+<p>\centering</p>
+<p>\includegraphics[width=0.4\textwidth]{example-image-c}</p>
+<p>\caption{Опция b (низ)}</p>
+<p>\end{figure}</p>
+<p>\lipsum[4-8]</p>
+<p>\end{document}</p>
+<p><img src="./report (4).docx LAB04 Scientific_images/image-013.png" alt=""></p>
+<h3 id="415-%D1%83%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-5-%D0%BF%D0%B5%D1%80%D0%B5%D0%BA%D1%80%D1%91%D1%81%D1%82%D0%BD%D1%8B%D0%B5-%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B8-%D0%B8-%D0%BA%D0%BE%D0%BB%D0%B8%D1%87%D0%B5%D1%81%D1%82%D0%B2%D0%BE-%D0%BA%D0%BE%D0%BC%D0%BF%D0%B8%D0%BB%D1%8F%D1%86%D0%B8%D0%B9--cross-references-and-number-of-compilations">4.1.5 Упражнение 5: Перекрёстные ссылки и количество компиляций / Cross-references and Number of Compilations</h3>
+<p>\documentclass{article}</p>
+<p>\usepackage[T1]{fontenc}</p>
+<p>\usepackage{graphics}</p>
+<p>\usepackage{lipsum}</p>
+<p>\usepackage{float}</p>
+<p>\usepackage{amsmath}</p>
+<p>\usepackage[colorlinks]{hyperref}</p>
+<p>\begin{document}</p>
+<p>\section*{Exercise 5: Cross-references and Number of Compilations}</p>
+<p>\subsection*{Useful document}</p>
+<p>\subsubsection*{Section (Introduction)}</p>
+<p>\label{sec:intro}</p>
+<p>In section~\ref{sec:intro}, we present...</p>
+<p>\subsubsection*{Subsection (first subsection)}</p>
+<p>\label{sub:first}</p>
+<p>As seen in subsection~\ref{sub:first}...</p>
+<p>\begin{enumerate}</p>
+<p>\item First point</p>
+<p>\item Second point \label{item:second}</p>
+<p>\item Reference to point~\ref{item:second}</p>
+<p>\end{enumerate}</p>
+<p>% \begin{figure}[ht]</p>
+<p>%   \centering</p>
+<p>%     \includegraphics[width=0.5\textwidth]{my-photo.jpg}</p>
+<p>%     \caption{Test figure}</p>
+<p>%     \label{fig:test}</p>
+<p>% \end{figure}</p>
+<p>% Figure~\ref{fig:test} shows...</p>
+<p>\end{document}</p>
+<p><img src="./report (4).docx LAB04 Scientific_images/image-014.png" alt=""></p>
+<h3 id="416-%D1%83%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-6-%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5-label-%D0%B4%D0%BE%D0%BF%D0%BE%D1%81%D0%BB%D0%B5-caption--placing-label-beforeafter-caption">4.1.6 Упражнение 6: Размещение label до/после caption / Placing label Before/After caption</h3>
+<p>\documentclass{article}</p>
+<p>\usepackage[utf8]{inputenc}</p>
+<p>\usepackage[T2A]{fontenc}</p>
+<p>\usepackage{graphicx}</p>
+<p>\begin{document}</p>
+<p>\begin{figure}[ht]</p>
+<p>\centering</p>
+<p>\includegraphics[width=0.4\textwidth]{example-image-a}</p>
+<p>\label{fig:before}</p>
+<p>\caption{Рисунок с label до caption}</p>
+<p>\end{figure}</p>
+<p>\begin{figure}[ht]</p>
+<p>\centering</p>
+<p>\includegraphics[width=0.4\textwidth]{my-photo.jpg}</p>
+<p>\caption{Рисунок с label после caption}</p>
+<p>\label{fig:after}</p>
+<p>\end{figure}</p>
+<p>Ссылка на рисунок~\ref{fig:before} (неправильная)\\</p>
+<p>Ссылка на рисунок~\ref{fig:after} (правильная)</p>
+<p>\end{document}</p>
+<p><img src="./report (4).docx LAB04 Scientific_images/image-015.png" alt=""></p>
+<h3 id="417-%D1%83%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-7-label-%D0%BF%D0%BE%D1%81%D0%BB%D0%B5-endequation--label-after-endequation">4.1.7 Упражнение 7: label после end{equation} / label After end{equation}</h3>
+<p>\documentclass{article}</p>
+<p>\usepackage[T1]{fontenc}</p>
+<p>\usepackage{graphicx}</p>
+<p>\usepackage{lipsum}</p>
+<p>\usepackage{float}</p>
+<p>\usepackage{amsmath}</p>
+<p>\usepackage{hyperref}</p>
+<p>\title{Exercise 7: \textbackslash label After \textbackslash end\{equation\}}</p>
+<p>\author{}</p>
+<p>\date{}</p>
+<p>\begin{document}</p>
+<p>\maketitle</p>
+<p>\section*{Exercise 7: \textbackslash label After \textbackslash end\{equation\}}</p>
+<p>\begin{equation}</p>
+<p>E = mc^2</p>
+<p>\end{equation}</p>
+<p>\label{eqafter} % AFTER end{equation} - INCORRECT</p>
+<p>\begin{equation}</p>
+<p>F = ma</p>
+<p>\label{eqinside} % INSIDE equation - CORRECT</p>
+<p>\end{equation}</p>
+<p>Reference to equation \ref{eqafter} (incorrect)</p>
+<p>Reference to equation \ref{eqinside} (correct)</p>
+<p>\textbf{<strong>Result:</strong>}</p>
+<p>\begin{itemize}</p>
+<p>\item \textbackslash label after \textbackslash end\{equation\} $\rightarrow$ incorrect reference (usually to previous equation or section)</p>
+<p>\item \textbackslash label inside the equation environment $\rightarrow$ correct reference to the equation</p>
+<p>\end{itemize}</p>
+<p>\end{document}</p>
+<p><img src="./report (4).docx LAB04 Scientific_images/image-016.png" alt=""></p>
+<h1 id="5-%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D1%8B">5 Выводы</h1>
+<p>В ходе лабораторной работы №4 я изучил основы включения и управления графикой в документах LaTeX. Освоил работу с пакетом graphicx, научился создавать плавающие объекты, управлять их размещением и создавать перекрёстные ссылки на изображения. Также изучил лучшие практики организации графических файлов и их именования.</p>
+<p>In this lab work #4, I learned the fundamentals of including and manipulating graphics in LaTeX documents. I mastered the graphicx package, learned to create float objects, control their placement, and create cross-references to images. I also studied best practices for organizing graphic files and naming them.</p>
+<h1 id="%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D1%8B">Список литературы</h1>
+<p>LaTeX/Математические формулы — Викиучебник. https://ru.wikibooks.org/wiki/LaTeX/</p>
+
+</body>
+</html>
