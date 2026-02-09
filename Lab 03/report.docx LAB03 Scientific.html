@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>report.docx LAB03 Scientific.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p>Отчёта по лабораторной работе №3</p>
+<p>Mathematics Typing</p>
+<p>ДРАММЕХ МАРИАМА Л</p>
+<p>Содержание</p>
+<p>Список иллюстраций</p>
+<p>Список таблиц</p>
+<h1 id="1-%D1%86%D0%B5%D0%BB%D1%8C-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B">1 Цель работы</h1>
+<p>Целью данной лабораторной работы является ознакомление с основами набора математических выражений в LaTeX.</p>
+<p>The purpose of this lab work is to learn how to typeset mathematical formulas and equations using LaTeX math mode and related packages.</p>
+<h1 id="2-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5">2 Задание</h1>
+<ol>
+<li>
+<p>Study inline and display math modes.</p>
+</li>
+<li>
+<p>Use the amsmath package to align and format equations.</p>
+</li>
+<li>
+<p>Apply different math fonts.</p>
+</li>
+<li>
+<p>Use mathtools for advanced formatting.</p>
+</li>
+<li>
+<p>Try bold math and Unicode math.</p>
+</li>
+<li>
+<p>Perform the exercises with examples.</p>
+</li>
+</ol>
+<h1 id="3-%D1%82%D0%B5%D0%BE%D1%80%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">3 Теоретическое введение</h1>
+<h2 id="31-31-%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC--math-mode">3.1 3.1 Математический режим / Math mode</h2>
+<p>В LaTeX существует два математических режима: <strong>inline</strong> и <strong>display</strong>.<br>
+In LaTeX there are two main math modes: inline (within text) and display (centered block).</p>
+<p>documentclass{article}<br>
+\usepackage[T1]{fontenc}<br>
+\begin{document}<br>
+A sentence with inline mathematics: $y = mx + c$.</p>
+<p>A second sentence with inline mathematics: $5^{2}=3^{2}+4^{2}$.</p>
+<p>A second paragraph containing display math.<br>
+\[<br>
+y = mx + c<br>
+\]<br>
+See how the paragraph continues after the display.<br>
+\end{document}</p>
+<p>(рис.<strong>¿fig:001?</strong>)</p>
+<p><img src="./report.docx LAB03 Scientific_images/image-001.png" alt=""></p>
+<h3 id="311-311-inline-math-mode-and-mathematical-notation">3.1.1 3.1.1 Inline math mode and mathematical notation</h3>
+<p>\documentclass{article}<br>
+\usepackage[T1]{fontenc}<br>
+\begin{document}<br>
+Superscripts $a^{b}$ and subscripts $a_{b}$.<br>
+\end{document}</p>
+<p>(см. Рис. <strong>¿fig:002?</strong>)</p>
+<p><img src="./report.docx LAB03 Scientific_images/image-002.png" alt=""></p>
+<p>\documentclass{article}<br>
+\usepackage[T1]{fontenc}<br>
+\begin{document}<br>
+Some mathematics: $y = 2 \sin \theta^{2}$.<br>
+\end{document}</p>
+<p>(см. Рис. <strong>¿fig:003?</strong>)</p>
+<p><img src="./report.docx LAB03 Scientific_images/image-003.png" alt=""></p>
+<h3 id="312-312-display-mathematics">3.1.2 3.1.2 Display mathematics</h3>
+<p>\documentclass{article}<br>
+\usepackage[T1]{fontenc}<br>
+\begin{document}<br>
+A paragraph about a larger equation<br>
+\[<br>
+\int_{-\infty}^{+\infty} e^{-x^2} \, dx<br>
+\]<br>
+\end{document}</p>
+<p>(см. Рис. <strong>¿fig:004?</strong>)</p>
+<p><img src="./report.docx LAB03 Scientific_images/image-004.png" alt=""></p>
+<p>\documentclass{article}<br>
+\usepackage[T1]{fontenc}<br>
+\newcommand{\diff}{\mathop{}\!d} % For italic<br>
+% \newcommand{\diff}{\mathop{}\!\mathrm{d}} % For upright<br>
+\begin{document}<br>
+A paragraph about a larger equation<br>
+\[<br>
+\int_{-\infty}^{+\infty} e^{-x^2} \diff x<br>
+\]<br>
+\end{document}</p>
+<p>(см. Рис. <strong>¿fig:005?</strong>)</p>
+<p><img src="./report.docx LAB03 Scientific_images/image-005.png" alt=""></p>
+<p>\documentclass{article}<br>
+\usepackage[T1]{fontenc}<br>
+\begin{document}<br>
+A paragraph about a larger equation<br>
+\begin{equation}<br>
+\int_{-\infty}^{+\infty} e^{-x^2} \, dx<br>
+\end{equation}<br>
+\end{document}</p>
+<p>(см. Рис. <strong>¿fig:006?</strong>)</p>
+<p><img src="./report.docx LAB03 Scientific_images/image-006.png" alt=""></p>
+<h2 id="32-32-%D0%BF%D0%B0%D0%BA%D0%B5%D1%82-amsmath--the-amsmath-package">3.2 3.2 Пакет amsmath / The amsmath package</h2>
+<p>Пакет amsmath расширяет стандартные возможности для набора формул и выравнивания уравнений. The amsmath package enhances math typesetting and alignment.</p>
+<p>\documentclass{article}<br>
+\usepackage[T1]{fontenc}<br>
+\usepackage{amsmath}<br>
+\begin{document}<br>
+\begin{align*}<br>
+Q_{n,k} &amp;= Q_{n-1,k} + Q_{n-1,k-1} + \binom{n}{k}, \\<br>
+&amp;\quad \text{for } n,k&gt;0.<br>
+\end{align*}<br>
+\end{document}</p>
+<p>(см. Рис. <strong>¿fig:007?</strong>)</p>
+<p><img src="./report.docx LAB03 Scientific_images/image-007.png" alt=""></p>
+<p>(см. Рис. <strong>¿fig:008?</strong>)</p>
+<p><img src="./report.docx LAB03 Scientific_images/image-008.png" alt=""></p>
+<h2 id="33-33-%D1%88%D1%80%D0%B8%D1%84%D1%82%D1%8B-%D0%B2-%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%BC-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D0%B5--fonts-in-math-mode">3.3 3.3 Шрифты в математическом режиме / Fonts in math mode</h2>
+<p>В математике разные шрифты обозначают разные типы объектов. Different font commands give different styles and meanings.</p>
+<p>\documentclass{article}<br>
+\usepackage{amsmath}<br>
+\begin{document}<br>
+$\mathrm{A}, \mathit{A}, \mathbf{A}, \mathsf{A}, \mathtt{A}, \mathbb{A}$<br>
+\end{document}</p>
+<p>(см. Рис. <strong>¿fig:009?</strong>)</p>
+<p><img src="./report.docx LAB03 Scientific_images/image-009.png" alt=""></p>
+<p>(см. Рис. <strong>¿fig:010?</strong>)</p>
+<p><img src="./report.docx LAB03 Scientific_images/image-010.png" alt=""></p>
+<h2 id="34-34-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D0%B2%D1%8B%D1%80%D0%B0%D0%B2%D0%BD%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F--further-amsmath-alignments">3.4 3.4 Дополнительные выравнивания / Further amsmath alignments</h2>
+<p>Environments like gather and multline are used for multi-line equations.</p>
+<p>\documentclass{article}<br>
+\usepackage{amsmath}<br>
+\begin{document}<br>
+\begin{gather}<br>
+P(x)=ax^{5}+bx^{4}+cx^{3}+dx^{2}+ex+f\\<br>
+x^2+x=10<br>
+\end{gather}<br>
+\end{document}</p>
+<p>(см. Рис. <strong>¿fig:011?</strong>)</p>
+<p><img src="./report.docx LAB03 Scientific_images/image-011.png" alt=""></p>
+<h2 id="35-341-columns-in-math-alignments">3.5 3.4.1 Columns in math alignments</h2>
+<p>(см. Рис. <strong>¿fig:012?</strong>)</p>
+<p><img src="./report.docx LAB03 Scientific_images/image-012.png" alt=""></p>
+<p>(см. Рис. <strong>¿fig:013?</strong>)</p>
+<p><img src="./report.docx LAB03 Scientific_images/image-013.png" alt=""></p>
+<h2 id="36-35-%D0%B6%D0%B8%D1%80%D0%BD%D1%8B%D0%B9-%D1%88%D1%80%D0%B8%D1%84%D1%82-%D0%B2-%D1%84%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B0%D1%85--bold-math">3.6 3.5 Жирный шрифт в формулах / Bold Math</h2>
+<p>To bold entire or partial equations, we can use \boldmath or the bm package.</p>
+<p>\documentclass{article}<br>
+\usepackage{bm}<br>
+\begin{document}<br>
+$(x+\bm{y})(x-\bm{y}) = x^2 - \bm{y}^2$<br>
+\end{document}</p>
+<p>(см. Рис. <strong>¿fig:014?</strong>)</p>
+<p><img src="./report.docx LAB03 Scientific_images/image-014.png" alt=""></p>
+<p>(см. Рис. <strong>¿fig:015?</strong>)</p>
+<p><img src="./report.docx LAB03 Scientific_images/image-015.png" alt=""></p>
+<h2 id="37-36-%D0%BF%D0%B0%D0%BA%D0%B5%D1%82-mathtools--mathtools-package">3.7 3.6 Пакет Mathtools / Mathtools package</h2>
+<p>mathtools builds upon amsmath and provides extended features like column alignment in matrices.</p>
+<p>\documentclass{article}<br>
+\usepackage{mathtools}<br>
+\begin{document}<br>
+\[<br>
+\begin{pmatrix*}[r]<br>
+10 &amp; 11 \\<br>
+1 &amp; 2 \\<br>
+-5 &amp; -6<br>
+\end{pmatrix*}<br>
+\]<br>
+\end{document}</p>
+<p>(см. Рис. <strong>¿fig:016?</strong>)</p>
+<p><img src="./report.docx LAB03 Scientific_images/image-016.png" alt=""></p>
+<h2 id="38-37-%D1%8E%D0%BD%D0%B8%D0%BA%D0%BE%D0%B4%D0%BD%D0%B0%D1%8F-%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0--unicode-math">3.8 3.7 Юникодная математика / Unicode Math</h2>
+<p>Using unicode-math with OpenType fonts allows modern mathematical typesetting.</p>
+<p>\documentclass{article}<br>
+\usepackage{unicode-math}<br>
+\setmainfont{TeX Gyre Pagella}<br>
+\setmathfont{TeX Gyre Pagella Math}<br>
+\begin{document}<br>
+\[<br>
+\log \alpha + \log \beta = \log(\alpha\beta)<br>
+\]<br>
+\end{document}</p>
+<p>(см. Рис. <strong>¿fig:017?</strong>)</p>
+<p><img src="./report.docx LAB03 Scientific_images/image-017.png" alt=""></p>
+<h1 id="4-%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%BE%D0%B9-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B">4 Выполнение лабораторной работы</h1>
+<h2 id="41-38-%D1%83%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F--exercises">4.1 3.8 Упражнения / Exercises</h2>
+<h3 id="411-1-%D0%BF%D0%B5%D1%80%D0%B5%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83-%D1%80%D0%B5%D0%B6%D0%B8%D0%BC%D0%B0%D0%BC%D0%B8--switching-between-math-modes">4.1.1 1. Переключение между режимами / Switching between math modes</h3>
+<p>(см. Рис. <strong>¿fig:018?</strong>) <img src="./report.docx LAB03 Scientific_images/image-018.png" alt=""></p>
+<h3 id="412-2-%D0%B3%D1%80%D0%B5%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5-%D0%B1%D1%83%D0%BA%D0%B2%D1%8B--greek-letters">4.1.2 2. Греческие буквы / Greek letters</h3>
+<p>(см. Рис. <strong>¿fig:019?</strong>) <img src="./report.docx LAB03 Scientific_images/image-019.png" alt=""></p>
+<h3 id="413-3-%D0%BA%D0%BE%D0%BC%D0%B1%D0%B8%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%B2--combining-fonts">4.1.3 3. Комбинирование шрифтов / Combining fonts</h3>
+<p>(см. Рис. <strong>¿fig:020?</strong>) <img src="./report.docx LAB03 Scientific_images/image-020.png" alt=""></p>
+<h3 id="414-4-%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D1%8B-%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B0-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0-%D0%B4%D0%BB%D1%8F-%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B9--equation-alignment">4.1.4 4. Параметры класса документа для уравнений / Equation alignment</h3>
+<p>(см. Рис. <strong>¿fig:021?</strong>) <img src="./report.docx LAB03 Scientific_images/image-021.png" alt=""></p>
+<p>(см. Рис. <strong>¿fig:022?</strong>) <img src="./report.docx LAB03 Scientific_images/image-022.png" alt=""></p>
+<p>(см. Рис. <strong>¿fig:023?</strong>) <img src="./report.docx LAB03 Scientific_images/image-023.png" alt=""></p>
+<h3 id="415-5-%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5-%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-amsmath--using-mathtools">4.1.5 5. Расширенное использование amsmath / Using Mathtools</h3>
+<p>(см. Рис. <strong>¿fig:024?</strong>) <img src="./report.docx LAB03 Scientific_images/image-024.png" alt=""></p>
+<h3 id="416-6-%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B0-%D0%B2%D1%8B%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B0-%D0%B6%D0%B8%D1%80%D0%BD%D1%8B%D0%BC-%D1%88%D1%80%D0%B8%D1%84%D1%82%D0%BE%D0%BC-%D1%81-bm--math-in-bold-with-bm">4.1.6 6. Математика выделена жирным шрифтом с bm / Math in bold with bm</h3>
+<p>(см. Рис. <strong>¿fig:025?</strong>) <img src="./report.docx LAB03 Scientific_images/image-025.png" alt=""></p>
+<h1 id="5-%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D1%8B">5 Выводы</h1>
+<p>В ходе лабораторной работы №3 я изучил основы набора математических выражений в LaTeX, познакомился с пакетами amsmath, mathtools, bm, и unicode-math. В результате я научился выравнивать уравнения, изменять математические шрифты, делать символы жирными и работать с многострочными выражениями.</p>
+<p>As a result, the goal of the lab was achieved: mastering math mode in LaTeX and using key math packages for professional-quality typesetting.</p>
+<h1 id="%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA-%D0%BB%D0%B8%D1%82%D0%B5%D1%80%D0%B0%D1%82%D1%83%D1%80%D1%8B">Список литературы</h1>
+
+</body>
+</html>
