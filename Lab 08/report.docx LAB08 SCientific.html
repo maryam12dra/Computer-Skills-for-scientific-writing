@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>report.docx LAB08 SCientific.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<p>Отчёт по лабораторной работе №8</p>
+<p>Diagrams and Drawings as Code</p>
+<p>ДРАММЕХ МАРИАМА Л</p>
+<p>Содержание</p>
+<p>Список иллюстраций</p>
+<p>Список таблиц</p>
+<h1 id="1-%D1%86%D0%B5%D0%BB%D1%8C-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B">1 Цель работы</h1>
+<p>Целью данной лабораторной работы является освоение создания диаграмм и рисунков программным способом в LaTeX с использованием пакета TikZ и других инструментов для визуального представления данных и математических объектов.</p>
+<p>The purpose of this lab work is to learn how to create diagrams and drawings programmatically in LaTeX using the TikZ package and other tools for visual representation of data and mathematical objects.</p>
+<h1 id="2-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5">2 Задание</h1>
+<ol>
+<li>Изучить основы создания графики с помощью пакета TikZ</li>
+<li>Освоить построение линий, кривых и узлов в TikZ</li>
+<li>Научиться создавать сложные графики и диаграммы</li>
+<li>Изучить построение фракталов и рекурсивных структур</li>
+<li>Выполнить практические упражнения по созданию графиков и фракталов</li>
+<li>Создать график функций и ковёр Серпинского</li>
+</ol>
+<h1 id="3-%D1%82%D0%B5%D0%BE%D1%80%D0%B5%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5">3 Теоретическое введение</h1>
+<h2 id="31-8-%D0%B4%D0%B8%D0%B0%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B-%D0%B8-%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BA%D0%B8-%D0%BA%D0%B0%D0%BA-%D0%BA%D0%BE%D0%B4--diagrams-and-drawings-as-code">3.1 8 Диаграммы и рисунки как код / Diagrams and Drawings as Code</h2>
+<h3 id="311-81-tikz">3.1.1 8.1 TikZ</h3>
+<p>TikZ - это мощный пакет для создания графики программным способом в LaTeX. Название является рекурсивным акронимом “TikZ ist kein Zeichenprogramm” (TikZ - это не программа для рисования).</p>
+<p>TikZ is a powerful package for creating graphics programmatically in LaTeX. The name is a recursive acronym “TikZ ist kein Zeichenprogramm” (TikZ is not a drawing program).</p>
+<p>\documentclass{article}</p>
+<p>\usepackage{tikz}</p>
+<p>\begin{document}</p>
+<p>\begin{tikzpicture}</p>
+<p>\draw (-1,0) -- (3,10pt) -- (35:3);</p>
+<p>\end{tikzpicture}</p>
+<p>\end{document}</p>
+<p><img src="./report.docx LAB08 SCientific_images/image-001.png" alt=""></p>
+<h3 id="312-811-%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D0%B1%D0%BB%D0%BE%D0%BA%D0%B8-tikz--building-blocks-of-tikz">3.1.2 8.1.1 Строительные блоки TikZ / Building Blocks of TikZ</h3>
+<p>Для создания рисунков в TikZ необходимо загрузить пакет tikz и использовать окружение tikzpicture. To create figures in TikZ you need to load the tikz package and use the tikzpicture environment.</p>
+<p>\documentclass{article}</p>
+<p>\usepackage{tikz}</p>
+<p>\begin{document}</p>
+<p>\begin{tikzpicture}</p>
+<p>\draw[-&gt;] (-1,0) -| (3,10pt);</p>
+<p>\draw[red] (3,10pt) -- (35:3);</p>
+<p>\end{tikzpicture}</p>
+<p>\end{document}</p>
+<p><img src="./report.docx LAB08 SCientific_images/image-002.png" alt=""></p>
+<h3 id="313-812-%D1%80%D0%B8%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BB%D0%B8%D0%BD%D0%B8%D0%B9--drawing-lines">3.1.3 8.1.2 Рисование линий / Drawing Lines</h3>
+<p>TikZ предоставляет различные типы линий и стили оформления. TikZ provides various types of lines and styling options.</p>
+<p>\documentclass{article}</p>
+<p>\usepackage{tikz}</p>
+<p>\begin{document}</p>
+<p>\begin{tikzpicture}</p>
+<p>\draw (-1,0) to (5,1);</p>
+<p>\draw[green] (-1,0) to[out=90,in=135] (5,1);</p>
+<p>\draw[cyan] (-1,0) .. controls (0,-2) .. (5,1);</p>
+<p>\end{tikzpicture}</p>
+<p>\end{document}</p>
+<p><img src="./report.docx LAB08 SCientific_images/image-003.png" alt=""></p>
+<h3 id="314-813-%D1%83%D0%B7%D0%BB%D1%8B--nodes">3.1.4 8.1.3 Узлы / Nodes</h3>
+<p>Узлы используются для добавления текста и меток в рисунки. Nodes are used to add text and labels to drawings.</p>
+<p>\documentclass{article}</p>
+<p>\usepackage{tikz}</p>
+<p>\begin{document}</p>
+<p>\begin{tikzpicture} [scale=2]</p>
+<p>% Define the nodes</p>
+<p>\node[circle, draw] at (0,0) (a) {A};</p>
+<p>\node[rectangle, fill] at (3,0) (b) {};</p>
+<p>\node at (3,0.4) (blabel) {B};</p>
+<p>\node[rectangle,rounded corners, draw] at (5,2) (c) {C};</p>
+<p>% Draw the paths</p>
+<p>\draw[-&gt;, green] (a) -- (b) node[midway, below,black]{2};</p>
+<p>\draw[&lt;-&gt;, blue] (a) to[out=45, in=135] (b);</p>
+<p>\draw[-»,red] (b)--(c);</p>
+<p>\draw[yellow,dotted,very thick] (b) |- (c);</p>
+<p>\draw[&lt;-,cyan] (b) -| (c);</p>
+<p>\draw[thick,black] (a).. controls (1,5) .. (c) node[midway,</p>
+<p>above]{$\frac{1}{2}$}; ↪</p>
+<p>\end{tikzpicture}</p>
+<p>\end{document}</p>
+<p><img src="./report.docx LAB08 SCientific_images/image-004.png" alt=""></p>
+<h3 id="315-814-%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%BE%D0%B2--plotting-curves">3.1.5 8.1.4 Построение графиков / Plotting Curves</h3>
+<p>TikZ позволяет строить графики функций напрямую. TikZ allows plotting function curves directly.</p>
+<p>\documentclass{article}</p>
+<p>\usepackage{tikz}</p>
+<p>\begin{document}</p>
+<p>\begin{tikzpicture} [scale=1.5]</p>
+<p>% Draw the x and y axis, label the axes and the origin</p>
+<p>\draw[gray, -&gt;] (-2,0) -- (2,0) node[right]{$x$}</p>
+<p>node[pos=0.53, below]{$O$};</p>
+<p>\draw[gray, -&gt;] (0,-1) -- (0,1) node[above]{$y$};</p>
+<p>\draw[fill,gray] (0,0) circle [radius=1pt];</p>
+<p>% Plot the curve</p>
+<p>% Note: the r in the argument of the cosine signifies that we enter \x in radians</p>
+<p>\draw[blue, thick] [domain=-2:2, samples=150] plot (\x,</p>
+<p>{cos(pi*\x r)})</p>
+<p>node[right]{$y = \cos(x)$};</p>
+<p>\end{tikzpicture}</p>
+<p>\end{document}</p>
+<p><img src="./report.docx LAB08 SCientific_images/image-005.png" alt=""></p>
+<h3 id="316-815-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D1%86%D0%B8%D0%BA%D0%BB%D0%B0%D0%BC%D0%B8--working-with-loops">3.1.6 8.1.5 Работа с циклами / Working with Loops</h3>
+<p>Циклы \foreach позволяют создавать сложные рисунки эффективно. \foreach loops allow creating complex drawings efficiently.</p>
+<p>\documentclass[tikz,border=1cm]{standalone}</p>
+<p>\usepackage{tikz}</p>
+<p>\usetikzlibrary{math}</p>
+<p>% Define a equilateral triangle with lower left corner at</p>
+<p>% coordinate #1 and with length of the sides #2</p>
+<p>\newcommand\Triangle[2]{</p>
+<p>\draw #1 coordinate(a) -- ++(0:#2) coordinate(b) ;</p>
+<p>\draw (a) -- ++(60:#2) coordinate(c);</p>
+<p>\fill (a) -- (b) -- (c) -- cycle;</p>
+<p>}</p>
+<p>\begin{document}</p>
+<p>\begin{tikzpicture}</p>
+<p>\tikzmath{</p>
+<p>% Define the recursive function sierpinski</p>
+<p>function sierpinski(\x, \y, \s, \d) {</p>
+<p>if (\d == 0) then {</p>
+<p>% Draw a triangle lower left corner at (\x, \y), length \s</p>
+<p>{ \Triangle{(\x,\y)}{\s}; };</p>
+<p>} else {</p>
+<p>% Rescale the length of the sides and choose correct coords</p>
+<p>% for the next triangles</p>
+<p>\u1 = 0.25*\s;</p>
+<p>\u2 = \u1*sqrt(3);</p>
+<p>\u3 = 0.5*\s;</p>
+<p>sierpinski(\x,\y,\u3,\d-1);</p>
+<p>sierpinski(\x+\u3,\y,\u3,\d-1);</p>
+<p>sierpinski(\x+\u1,\y+\u2,\u3,\d-1);</p>
+<p>};</p>
+<p>};</p>
+<p>% Let the length of the sides of the base triangle be 4, and generate 6 figures</p>
+<p>\S = 4;</p>
+<p>for \d in {0,...,5}{</p>
+<p>% To situate all plots nicely under and next to each other, define the coords</p>
+<p>% of the lower left corners preemptively</p>
+<p>\x = (\S+1)*mod(\d,2);</p>
+<p>\y = int(\d/2) * (\S+1);</p>
+<p>sierpinski(\x,-\y,\S,\d);</p>
+<p>};</p>
+<p>}</p>
+<p>\end{tikzpicture}</p>
+<p>\end{document}</p>
+<p><img src="./report.docx LAB08 SCientific_images/image-006.png" alt=""></p>
+<h1 id="4-%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%BE%D0%B9-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B">4 Выполнение лабораторной работы</h1>
+<h2 id="41-82-%D1%83%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F--exercises">4.1 8.2 Упражнения / Exercises</h2>
+<h3 id="411-%D1%83%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-1-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B3%D1%80%D0%B0%D1%84%D0%B0--exercise-1-creating-a-graph">4.1.1 Упражнение 1: Создание графа / Exercise 1: Creating a Graph</h3>
+<p>\documentclass[border=1cm]{standalone}</p>
+<p>\usepackage{tikz}</p>
+<p>\begin{document}</p>
+<p>\begin{tikzpicture}[scale=1.5]</p>
+<p>% Define nodes with specified styles</p>
+<p>\node[circle, draw, fill=green!50] at (0,0) (A) {A};</p>
+<p>\node[rectangle, draw, fill=white] at (2,1) (B) {B};</p>
+<p>\node[circle, draw, fill=green!50] at (4,0) (C) {C};</p>
+<p>\node[rectangle, draw, fill=white] at (2,-1) (D) {D};</p>
+<p>\node[circle, draw, fill=green!50] at (1,0.5) (E) {E};</p>
+<p>\node[rectangle, draw, fill=white] at (3,0.5) (F) {F};</p>
+<p>% Draw triangle BDF with dashed light blue lines</p>
+<p>\draw[blue!50, dashed, thick] (B) -- (D) -- (F) -- cycle;</p>
+<p>% Draw red arcs</p>
+<p>\draw[red, thick] (B) to[out=180, in=90] (A);</p>
+<p>\draw[red, thick] (D) to[out=180, in=270] (A);</p>
+<p>\draw[red, thick] (A) to[out=0, in=180] (E);</p>
+<p>% Draw blue arcs</p>
+<p>\draw[blue!50, thick] (B) to[out=0, in=90] (C);</p>
+<p>\draw[blue!50, thick] (D) to[out=0, in=270] (E);</p>
+<p>\end{tikzpicture}</p>
+<p>\end{document}</p>
+<p><img src="./report.docx LAB08 SCientific_images/image-007.png" alt=""></p>
+<h3 id="412-%D1%83%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-2-%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%BE%D0%B2-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B9--exercise-2-plotting-function-graphs">4.1.2 Упражнение 2: Построение графиков функций / Exercise 2: Plotting Function Graphs</h3>
+<p>\documentclass[border=1cm]{standalone}</p>
+<p>\usepackage{tikz}</p>
+<p>\usepackage{amsmath}</p>
+<p>\begin{document}</p>
+<p>\begin{tikzpicture}[scale=1.2]</p>
+<p>% Draw coordinate system</p>
+<p>\draw[-&gt;, thick] (-0.5,0) -- (4.5,0) node[right] {$x$};</p>
+<p>\draw[-&gt;, thick] (0,-0.5) -- (0,4.5) node[above] {$y$};</p>
+<p>% Draw grid</p>
+<p>\draw[gray!30] (0,0) grid (4,4);</p>
+<p>% Draw the curves</p>
+<p>% Exponential function y = e^x</p>
+<p>\draw[blue, thick, domain=0:1.4, samples=100] plot (\x, {exp(\x)});</p>
+<p>\node[blue, right] at (1.4, {exp(1.4)}) {$y = e^x$};</p>
+<p>% Natural logarithm y = ln(x)</p>
+<p>\draw[red, thick, domain=0.37:4, samples=100] plot (\x, {ln(\x)});</p>
+<p>\node[red, above] at (3.5, {ln(3.5)}) {$y = \ln(x)$};</p>
+<p>% Horizontal line y = 1</p>
+<p>\draw[green, thick, dashed] (0,1) -- (4,1);</p>
+<p>\node[green, left] at (0,1) {$y = 1$};</p>
+<p>% Vertical line x = 1</p>
+<p>\draw[orange, thick, dashed] (1,0) -- (1,4);</p>
+<p>\node[orange, below] at (1,0) {$x = 1$};</p>
+<p>% Mark intersection points</p>
+<p>\fill[black] (0,1) circle (2pt);</p>
+<p>\fill[black] (1,0) circle (2pt);</p>
+<p>\fill[black] (1,1) circle (2pt);</p>
+<p>% Add labels for intersection points</p>
+<p>\node[below left] at (0,1) {$(0,1)$};</p>
+<p>\node[below right] at (1,0) {$(1,0)$};</p>
+<p>\node[above right] at (1,1) {$(1,1)$};</p>
+<p>% Add title</p>
+<p>\node[align=center] at (2,4.2) {\textbf{<strong>TikZ Graph Exercise</strong>}};</p>
+<p>\end{tikzpicture}</p>
+<p>\end{document}</p>
+<p><img src="./report.docx LAB08 SCientific_images/image-008.png" alt=""></p>
+<h3 id="413-%D1%83%D0%BF%D1%80%D0%B0%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-3-%D0%BA%D0%BE%D0%B2%D1%91%D1%80-%D1%81%D0%B5%D1%80%D0%BF%D0%B8%D0%BD%D1%81%D0%BA%D0%BE%D0%B3%D0%BE--exercise-3-sierpi%C5%84ski-carpet">4.1.3 Упражнение 3: Ковёр Серпинского / Exercise 3: Sierpiński Carpet</h3>
+<p>\documentclass[border=1cm]{standalone}</p>
+<p>\usepackage{tikz}</p>
+<p>% Function to draw Sierpiński carpet</p>
+<p>\newcommand{\sierpinskicarpet}[4]{% x, y, size, level</p>
+<p>\ifnum#4=0</p>
+<p>\fill[black] (#1,#2) rectangle (#1+#3,#2+#3);</p>
+<p>\else</p>
+<p>\pgfmathsetmacro{\newsize}{#3/3}</p>
+<p>\edef\nextlevel{\the\numexpr#4-1\relax}</p>
+<p>% Draw the 8 smaller carpets around the center hole</p>
+<p>\sierpinskicarpet{#1}{#2}{\newsize}{\nextlevel}% bottom-left</p>
+<p>\sierpinskicarpet{#1+\newsize}{#2}{\newsize}{\nextlevel}% bottom-middle</p>
+<p>\sierpinskicarpet{#1+2*\newsize}{#2}{\newsize}{\nextlevel}% bottom-right</p>
+<p>\sierpinskicarpet{#1}{#2+\newsize}{\newsize}{\nextlevel}% middle-left</p>
+<p>% Center is empty - this creates the characteristic hole</p>
+<p>\sierpinskicarpet{#1+2*\newsize}{#2+\newsize}{\newsize}{\nextlevel}% middle-right</p>
+<p>\sierpinskicarpet{#1}{#2+2*\newsize}{\newsize}{\nextlevel}% top-left</p>
+<p>\sierpinskicarpet{#1+\newsize}{#2+2*\newsize}{\newsize}{\nextlevel}% top-middle</p>
+<p>\sierpinskicarpet{#1+2*\newsize}{#2+2*\newsize}{\newsize}{\nextlevel}% top-right</p>
+<p>\fi</p>
+<p>}</p>
+<p>\begin{document}</p>
+<p>\begin{tikzpicture}</p>
+<p>% Draw carpets for iterations 0 to 3</p>
+<p>\foreach \i in {0,1,2,3} {</p>
+<p>\begin{scope}[xshift=\i*4cm]</p>
+<p>\draw[black, thick] (0,0) rectangle (3,3);</p>
+<p>\sierpinskicarpet{0}{0}{3}{\i}</p>
+<p>\node[below] at (1.5,-0.3) {Level \i};</p>
+<p>\end{scope}</p>
+<p>}</p>
+<p>% Title</p>
+<p>\node[above] at (6,3.5) {\Large Sierpiński Carpet};</p>
+<p>\end{tikzpicture}</p>
+<p>\end{document}</p>
+<p><img src="./report.docx LAB08 SCientific_images/image-009.png" alt=""></p>
+<h1 id="5-%D0%B2%D1%8B%D0%B2%D0%BE%D0%B4%D1%8B">5 Выводы</h1>
+<p>В ходе лабораторной работы №8 я освоил создание диаграмм и рисунков программным способом в LaTeX с использованием пакета TikZ. Изучил основы построения линий, кривых и узлов, освоил создание сложных графиков функций и фрактальных структур. На практике создал различные типы графиков, включая математические функции и рекурсивные структуры такие как ковёр Серпинского и треугольник Серпинского. Полученные навыки позволяют создавать профессиональные научные иллюстрации непосредственно в LaTeX документах.</p>
+<p>In this lab work 8, I mastered creating diagrams and drawings programmatically in LaTeX using the TikZ package. I studied the basics of constructing lines, curves and nodes, mastered creating complex function graphs and fractal structures. In practice, I created various types of graphs, including mathematical functions and recursive structures such as Sierpiński carpet and Sierpiński triangle. The acquired skills allow creating professional scientific illustrations directly in LaTeX documents.</p>
+
+</body>
+</html>
